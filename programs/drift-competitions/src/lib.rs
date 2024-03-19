@@ -40,6 +40,12 @@ pub mod drift_competitions {
         instructions::update_competitor_status(ctx, new_status)
     }
 
+    pub fn initialize_reward_pool<'info>(
+        ctx: Context<'_, '_, '_, 'info, InitializeRewardPool<'info>>,
+    ) -> Result<()> {
+        instructions::initialize_reward_pool(ctx)
+    }
+
     // competitor ix
     pub fn initialize_competitor<'info>(
         ctx: Context<'_, '_, '_, 'info, InitializeCompetitor<'info>>,

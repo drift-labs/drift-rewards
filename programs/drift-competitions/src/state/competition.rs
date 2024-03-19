@@ -57,6 +57,9 @@ pub struct Competition {
 
     pub competition_authority: Pubkey,
 
+    pub reward_pool: Pubkey,
+    pub reward_pool_mint: Pubkey,
+
     // entries
     pub number_of_competitors: u128,
     pub number_of_competitors_settled: u128,
@@ -94,7 +97,7 @@ pub struct Competition {
 }
 
 impl Size for Competition {
-    const SIZE: usize = 328 + 8;
+    const SIZE: usize = 392 + 8;
 }
 
 const_assert_eq!(Competition::SIZE, std::mem::size_of::<Competition>() + 8);
