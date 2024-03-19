@@ -8,6 +8,9 @@ pub fn initialize_reward_pool<'info>(
 ) -> Result<()> {
     let mut competition = ctx.accounts.competition.load()?;
 
+    // todo enforce mint
+    // todo check mint is already set
+
     competition.reward_pool = ctx.accounts.reward_pool.key();
     competition.reward_pool_mint = ctx.accounts.reward_pool_mint.key();
 
